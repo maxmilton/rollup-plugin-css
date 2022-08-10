@@ -1,0 +1,6 @@
+*-lock.json*
+*.lock
+*.log
+/coverage/
+dist
+node_modules

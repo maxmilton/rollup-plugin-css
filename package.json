@@ -1,0 +1,49 @@
+{
+  "name": "@maxmilton/rollup-plugin-css",
+  "version": "0.0.3",
+  "description": "Rollup plugin to combine, minify, and write to disk the CSS files in your build",
+  "repository": "maxmilton/rollup-plugin-css",
+  "author": "Max Milton <max@happycode.ltd>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pnpm run prebuild && tsc",
+    "dev": "tsc --watch --preserveWatchOutput",
+    "lint": "pnpm run lint:js && pnpm run lint:ts",
+    "lint:js": "eslint --ignore-path .gitignore --ext .cjs,.js,.mjs,.ts .",
+    "lint:ts": "tsc --project test",
+    "prebuild": "rm -rf dist",
+    "test": "c8 --all --include=src --reporter=text --reporter=lcovonly uvu -r tsm test '\\.test\\.ts$'"
+  },
+  "peerDependencies": {
+    "rollup": "^2.0.0"
+  },
+  "dependencies": {
+    "@parcel/css": "^1.12.2",
+    "@rollup/pluginutils": "^4.1.1",
+    "source-map": "^0.7.3"
+  },
+  "devDependencies": {
+    "@types/node": "18.6.5",
+    "@types/prettier": "2.7.0",
+    "@typescript-eslint/eslint-plugin": "5.33.0",
+    "@typescript-eslint/parser": "5.33.0",
+    "c8": "7.12.0",
+    "eslint": "8.21.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-airbnb-typescript": "17.0.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-unicorn": "43.0.2",
+    "prettier": "2.7.1",
+    "prettier-plugin-pkg": "0.16.1",
+    "prettier-plugin-sh": "0.12.8",
+    "rollup": "2.77.2",
+    "tsm": "2.2.2",
+    "typescript": "4.7.4",
+    "uvu": "0.5.6"
+  }
+}
