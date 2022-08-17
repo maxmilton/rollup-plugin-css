@@ -27,5 +27,5 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },
-  "exclude": ["*.config.js", "**/dist", "**/node_modules", "coverage", "test"]
+  "exclude": ["*.config.cjs", "**/dist", "**/node_modules", "coverage", "test"]
 }
