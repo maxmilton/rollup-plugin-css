@@ -1,7 +1,7 @@
-import type { TransformOptions } from '@parcel/css';
-import * as pcss from '@parcel/css';
-import type { Targets } from '@parcel/css/node/targets';
 import { createFilter, FilterPattern } from '@rollup/pluginutils';
+import type { TransformOptions } from 'lightningcss';
+import * as lightningcss from 'lightningcss';
+import type { Targets } from 'lightningcss/node/targets';
 import path from 'path';
 import type { Plugin, SourceMap } from 'rollup';
 import { SourceMapConsumer, SourceNode } from 'source-map';
@@ -91,7 +91,7 @@ export default function rollupPlugin({
       let minifiedMap;
 
       if (minify) {
-        const minified = pcss.transform({
+        const minified = lightningcss.transform({
           filename: assetName,
           code: Buffer.from(css),
           minify: true,
