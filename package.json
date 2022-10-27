@@ -23,7 +23,7 @@
     "rollup": "^2.0.0"
   },
   "dependencies": {
-    "@rollup/pluginutils": "^4.1.1",
+    "@rollup/pluginutils": "^5.0.0",
     "lightningcss": "^1.15.1",
     "source-map": "^0.7.3"
   },
