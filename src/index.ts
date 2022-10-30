@@ -44,7 +44,7 @@ export default function rollupPlugin({
   let useSourceMaps: boolean | 'inline' | 'hidden';
 
   return {
-    name: 'ekscss-css',
+    name: 'maxmilton-css',
 
     renderStart(outputOptions) {
       useSourceMaps = outputOptions.sourcemap;
