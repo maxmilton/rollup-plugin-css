@@ -20,7 +20,7 @@
     "test": "c8 --all --include=src --reporter=text --reporter=lcovonly uvu -r tsm test '\\.test\\.ts$'"
   },
   "peerDependencies": {
-    "rollup": "^2.0.0 | ^3.0.0"
+    "rollup": "^2.0.0 || ^3.0.0"
   },
   "dependencies": {
     "@rollup/pluginutils": "^5.0.2",
