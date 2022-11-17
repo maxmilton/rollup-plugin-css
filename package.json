@@ -41,7 +41,7 @@
     "prettier": "2.7.1",
     "prettier-plugin-pkg": "0.17.1",
     "prettier-plugin-sh": "0.12.8",
-    "rollup": "3.2.5",
+    "rollup": "3.3.0",
     "tsm": "2.2.2",
     "typescript": "4.9.3",
     "uvu": "0.5.6"

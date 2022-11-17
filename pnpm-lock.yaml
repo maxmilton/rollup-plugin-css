@@ -16,14 +16,14 @@ specifiers:
   prettier: 2.7.1
   prettier-plugin-pkg: 0.17.1
   prettier-plugin-sh: 0.12.8
-  rollup: 3.2.5
+  rollup: 3.3.0
   source-map: ^0.7.3
   tsm: 2.2.2
   typescript: 4.9.3
   uvu: 0.5.6
 
 dependencies:
-  '@rollup/pluginutils': 5.0.2_rollup@3.2.5
+  '@rollup/pluginutils': 5.0.2_rollup@3.3.0
   lightningcss: 1.16.0
   source-map: 0.7.4
 
@@ -41,7 +41,7 @@ devDependencies:
   prettier: 2.7.1
   prettier-plugin-pkg: 0.17.1_prettier@2.7.1
   prettier-plugin-sh: 0.12.8_prettier@2.7.1
-  rollup: 3.2.5
+  rollup: 3.3.0
   tsm: 2.2.2
   typescript: 4.9.3
   uvu: 0.5.6
@@ -173,7 +173,7 @@ packages:
       tslib: 2.4.1
     dev: true
 
-  /@rollup/pluginutils/5.0.2_rollup@3.2.5:
+  /@rollup/pluginutils/5.0.2_rollup@3.3.0:
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -185,7 +185,7 @@ packages:
       '@types/estree': 1.0.0
       estree-walker: 2.0.2
       picomatch: 2.3.1
-      rollup: 3.2.5
+      rollup: 3.3.0
     dev: false
 
   /@types/estree/1.0.0:
@@ -2100,8 +2100,8 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup/3.2.5:
-    resolution: {integrity: sha512-/Ha7HhVVofduy+RKWOQJrxe4Qb3xyZo+chcpYiD8SoQa4AG7llhupUtyfKSSrdBM2mWJjhM8wZwmbY23NmlIYw==}
+  /rollup/3.3.0:
+    resolution: {integrity: sha512-wqOV/vUJCYEbWsXvwCkgGWvgaEnsbn4jxBQWKpN816CqsmCimDmCNJI83c6if7QVD4v/zlyRzxN7U2yDT5rfoA==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
