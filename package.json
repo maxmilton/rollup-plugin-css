@@ -28,7 +28,7 @@
     "source-map": "^0.7.3"
   },
   "devDependencies": {
-    "@types/node": "18.13.0",
+    "@types/node": "18.15.0",
     "@types/prettier": "2.7.2",
     "@typescript-eslint/eslint-plugin": "5.54.1",
     "@typescript-eslint/parser": "5.54.1",
