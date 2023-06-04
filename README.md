@@ -7,6 +7,30 @@
 
 Rollup plugin to combine, minify, and write to disk the CSS files in your build.
 
+## Usage
+
+`rollup.config.js`:
+
+```js
+import { css } from '@maxmilton/rollup-plugin-css';
+
+module.exports = {
+
+  ...
+
+  plugins: [
+    commonjs(),
+    nodeResolve(),
+    css({
+      minify: true,
+    }),
+  ],
+
+  ...
+
+};
+```
+
 ## Bugs
 
 Report any bugs you encounter on the [GitHub issue tracker](https://github.com/maxmilton/new-tab/issues).
