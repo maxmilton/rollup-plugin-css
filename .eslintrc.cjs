@@ -30,11 +30,8 @@ module.exports = {
     'unicorn/filename-case': OFF,
     'unicorn/no-abusive-eslint-disable': WARN,
     'unicorn/no-null': OFF,
-    'unicorn/prefer-add-event-listener': OFF,
-    'unicorn/prefer-dom-node-append': OFF,
     'unicorn/prefer-module': OFF,
     'unicorn/prefer-node-protocol': OFF,
-    'unicorn/prefer-query-selector': OFF,
     'unicorn/prevent-abbreviations': OFF,
   },
 };
