@@ -30,7 +30,7 @@ export interface PluginOptions {
   name?: string | undefined;
 }
 
-export default function rollupPlugin({
+function rollupPlugin({
   exclude = [],
   name,
   include = /\.x?css$/,
@@ -174,3 +174,5 @@ export default function rollupPlugin({
     },
   };
 }
+
+export { rollupPlugin as css };
