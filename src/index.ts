@@ -1,10 +1,9 @@
-import { createFilter, FilterPattern } from '@rollup/pluginutils';
-import type { TransformOptions } from 'lightningcss';
-import * as lightningcss from 'lightningcss';
+import { createFilter, type FilterPattern } from '@rollup/pluginutils';
+import { transform } from 'lightningcss';
 import type { Targets } from 'lightningcss/node/targets';
-import path from 'path';
+import { basename, extname } from 'node:path';
 import type { Plugin, SourceMap } from 'rollup';
-import { SourceMapConsumer, SourceNode } from 'source-map';
+import { SourceMapConsumer, SourceNode, type RawSourceMap } from 'source-map';
 
 export interface PluginOptions {
   /**
@@ -19,7 +18,7 @@ export interface PluginOptions {
    * @default /\.x?css$/
    */
   include?: FilterPattern | undefined;
-  /** Minify CSS with `csso`. */
+  /** Minify CSS. */
   minify?: boolean | undefined;
   targets?: Targets | undefined;
   /**
@@ -44,7 +43,7 @@ export default function rollupPlugin({
   let useSourceMaps: boolean | 'inline' | 'hidden';
 
   return {
-    name: 'maxmilton-css',
+    name: 'css',
 
     renderStart(outputOptions) {
       useSourceMaps = outputOptions.sourcemap;
@@ -76,28 +75,30 @@ export default function rollupPlugin({
 
       if (!css) return;
 
-      const inferredName = name
-        || outputOpts.name
-        || (outputOpts.file && path.basename(outputOpts.file));
+      const inferredName =
+        name ||
+        outputOpts.name ||
+        (outputOpts.file && basename(outputOpts.file));
 
       if (!inferredName) {
-        this.error(
+        // eslint-disable-next-line consistent-return
+        return this.error(
           'Unable to infer output CSS asset name; add "name" to plugin options or rollup output options',
         );
       }
 
-      const assetName = inferredName.replace(path.extname(inferredName), '');
-      const combinedCss = `${css}`;
+      const assetName = inferredName.replace(extname(inferredName), '');
+      const combinedCss = String(css);
       let minifiedMap;
 
       if (minify) {
-        const minified = lightningcss.transform({
+        const minified = transform({
           filename: assetName,
           code: Buffer.from(css),
           minify: true,
           sourceMap: !!outputOpts.sourcemap,
-          targets,
-        } as TransformOptions);
+          targets: targets as Targets, // cast to workaround poorly typed package
+        });
 
         for (const warning of minified.warnings) {
           this.warn(warning.message);
@@ -121,7 +122,7 @@ export default function rollupPlugin({
             SourceNode.fromStringWithSourceMap(
               styles.get(id)!,
               // eslint-disable-next-line no-await-in-loop
-              await new SourceMapConsumer(sourcemaps.get(id)!),
+              await new SourceMapConsumer(sourcemaps.get(id) as RawSourceMap),
             ),
           );
         }
