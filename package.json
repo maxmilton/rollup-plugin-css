@@ -1,6 +1,6 @@
 {
   "name": "@maxmilton/rollup-plugin-css",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "type": "module",
   "description": "Rollup plugin to combine, minify, and write to disk the CSS files in your build",
   "repository": "maxmilton/rollup-plugin-css",
