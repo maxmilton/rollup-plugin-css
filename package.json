@@ -20,7 +20,7 @@
     "test": "c8 --all --include=src --reporter=text --reporter=lcovonly uvu -r tsm test '\\.test\\.ts$'"
   },
   "peerDependencies": {
-    "rollup": "^2.0.0 || ^3.0.0"
+    "rollup": "^2.0.0 || ^3.0.0 || ^4.0.0"
   },
   "dependencies": {
     "@rollup/pluginutils": "^5.0.2",
@@ -42,7 +42,7 @@
     "eslint-plugin-unicorn": "48.0.1",
     "prettier": "2.8.8",
     "prettier-plugin-pkg": "0.17.1",
-    "rollup": "3.29.4",
+    "rollup": "4.2.0",
     "tsm": "2.3.0",
     "typescript": "5.2.2",
     "uvu": "0.5.6"
