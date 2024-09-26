@@ -42,7 +42,7 @@
     "eslint-plugin-unicorn": "50.0.1",
     "prettier": "2.8.8",
     "prettier-plugin-pkg": "0.17.1",
-    "rollup": "3.29.4",
+    "rollup": "3.29.5",
     "tsm": "2.3.0",
     "typescript": "5.3.3",
     "uvu": "0.5.6"
